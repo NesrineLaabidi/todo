@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
+import Add from './Components/Add';
+import ListTask from './Components/ListTask';
+
+import { motion } from "framer-motion";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <motion.h1
+        initial={{ y: -200 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", duration: 0.5 }}
+        whileHover={{ scale: 1.1 }}
+      >
+        Todo App
+      </motion.h1>
+      <motion.div
+        initial={{ y: 1000 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", duration: 1 }}
+      >
+        <Add />
+        <ListTask />
+      </motion.div>
     </div>
   );
 }
 
 export default App;
+
